@@ -1,8 +1,9 @@
 <div style="padding: 13px">
   <mat-spinner *ngIf="products.length === 0"></mat-spinner>
+
   <mat-card *ngFor="let product of products" style="margin-top: 10px;">
     <mat-card-header>
-      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-title>#{{product.id}} {{ product.name }}</mat-card-title>
       <mat-card-subtitle>{{ product.price }} $/ {{ product.quantity }}</mat-card-subtitle>
     </mat-card-header>
 
@@ -16,4 +17,11 @@
       <button mat-button>Buy product</button>
     </mat-card-actions>
   </mat-card>
+</div>
+
+<div>
+  <button (click)="firstPage()" mat-button>First</button>
+  <button (click)="previousPage()" mat-button>Previous</button>
+  <button (click)="nextPage()" mat-button>Next</button>
+  <button (click)="lastPage()" mat-button>Last</button>
 </div>
